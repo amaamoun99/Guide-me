@@ -1,0 +1,5 @@
+﻿  CityGraph.cpp
+D:\university projects\Guide me\CityGraph.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Guide me.cpp
+  Generating Code...
+  Guide me.vcxproj -> D:\university projects\Guide me\x64\Debug\Guide me.exe
