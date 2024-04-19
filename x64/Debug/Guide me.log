@@ -1,5 +1,6 @@
-﻿  CityGraph.cpp
-D:\university projects\Guide me\CityGraph.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+﻿  Edge.cpp
+  Graph.cpp
   Guide me.cpp
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Guide me.cpp(14,10): warning C4930: 'Edge e(void)': prototyped function not called (was a variable definition intended?)
   Generating Code...
-  Guide me.vcxproj -> D:\university projects\Guide me\x64\Debug\Guide me.exe
+  Guide me.vcxproj -> C:\Users\farida\Source\Repos\amaamoun99\Guide-me\x64\Debug\Guide me.exe
