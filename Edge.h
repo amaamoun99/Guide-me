@@ -15,17 +15,14 @@ struct transportation
 class Edge
 {
 public:
- 
-	//string source;
-	//string destination;
-	
-	//vector<transportation> t;
+
+	vector<transportation> transportations;
 
 public:
 	Edge();
-	void addtation(vector<transportation>);
-	void removetation(vector<transportation>);
-	void updatetationPrice(vector<transportation>);
+	void addTransportation();
+	void removeTransportation();
+	void updateTransportation();
 
 
 

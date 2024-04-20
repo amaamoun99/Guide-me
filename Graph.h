@@ -8,12 +8,12 @@
 using namespace std;
 
 class Graph {
-	
+
 public:
-   
-    unordered_map<string, list<pair<string,vector<transportation>>>> adjacency_list;
-  
+
+    unordered_map<string, list<pair<string, Edge>>> adjacency_list;
+
 public:
     Graph();
-    void addEdges(string u, string v, vector<transportation>& transportation);
+    void addEdges(string, string, Edge);
 };

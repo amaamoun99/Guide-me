@@ -10,10 +10,9 @@ Graph::Graph() {
 
 }
 
-void Graph::addEdges(string source, string destination, vector<transportation>& transportation) {
-   
-    // Add edges to adjacency_list
-    adjacency_list[source].push_back({ destination, transportation });
-    adjacency_list[destination].push_back({ source, transportation }); // For undirected graph
+void Graph::addEdges(string source, string destination, Edge e) {
+
+    adjacency_list[source].push_back({ destination, e });
+    adjacency_list[destination].push_back({ source, e }); // For undirected graph
 }
 

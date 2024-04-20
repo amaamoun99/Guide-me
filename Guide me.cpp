@@ -9,39 +9,29 @@ using namespace std;
 
 
 
-int main()
+void main()
 {
-    Edge e();
-
-   // vector <transporation> t;
-
-
-
-   // e.addtation();
-   // e.addtation();
-   // e.addtation();
-
-
-    //for (int i = 0; i < e.t.size(); i++)
-    //{
-    //    cout << e.t[i].Vechilename << endl;
-    //    cout << e.t[i].VechilePrice << endl;
-    //}
-    //e.removetation("bus");
-   // for (int i = 0; i < e.t.size(); i++)
-   // {
-   //     cout << e.t[i].Vechilename << endl;
-   //     cout << e.t[i].VechilePrice << endl;
-   // }
-
+    Edge e1, e2;
+    e1.addTransportation();
+    e1.addTransportation();
+    e1.addTransportation();
+    e1.updateTransportation();
+    e2.addTransportation();
+    e2.addTransportation();
     Graph g;
-    
-    vector< transportation> transporationssss = { {"Bus", 50.0}, {"Car", 60.0} };
-        g.addEdges("Ajgf", "coujyg",transporationssss);
-       
 
- 
+    g.addEdges("Cairo", "Giza", e1);
+    g.addEdges("Cairo", "Beni Suef", e2);
+    for (const auto& vertex_pair : g.adjacency_list) {
+        cout << "\nVertex " << vertex_pair.first << ":";
+        for (const auto& adjacent_vertex_pair : vertex_pair.second) {
+            cout << "\nAdjacent vertex: " << adjacent_vertex_pair.first;
+            for (const auto& trasportationss : adjacent_vertex_pair.second.transportations)
+            {
+                cout << "\nTransportation Name:" << trasportationss.Vechilename << " \nTransportation Price:" << trasportationss.VechilePrice;
+            }
+        }
+    }
 
 
-    return 0;
 }

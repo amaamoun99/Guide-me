@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yahia\\source\\repos\\Guide-me\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|solutionrelative:Graph.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|solutionrelative:Graph.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|solutionrelative:Edge.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|solutionrelative:Edge.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|C:\\Users\\yahia\\source\\repos\\Guide-me\\Guide me.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{DCD67FFE-301F-4BEE-BF0F-4278A1750696}|Guide me.vcxproj|solutionrelative:Guide me.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edge.h",
+              "DocumentMoniker": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.h",
+              "RelativeDocumentMoniker": "Edge.h",
+              "ToolTip": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.h",
+              "RelativeToolTip": "Edge.h",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAIwB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-20T17:45:03.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Graph.h",
+              "DocumentMoniker": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.h",
+              "RelativeDocumentMoniker": "Graph.h",
+              "ToolTip": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.h",
+              "RelativeToolTip": "Graph.h",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAIwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-20T17:44:47.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Guide me.cpp",
+              "DocumentMoniker": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Guide me.cpp",
+              "RelativeDocumentMoniker": "Guide me.cpp",
+              "ToolTip": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Guide me.cpp",
+              "RelativeToolTip": "Guide me.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-20T17:44:03.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edge.cpp",
+              "DocumentMoniker": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.cpp",
+              "RelativeDocumentMoniker": "Edge.cpp",
+              "ToolTip": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Edge.cpp",
+              "RelativeToolTip": "Edge.cpp",
+              "ViewState": "AQIAACEAAAAAAAAAAAAIwDcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-20T17:42:39.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Graph.cpp",
+              "DocumentMoniker": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.cpp",
+              "RelativeDocumentMoniker": "Graph.cpp",
+              "ToolTip": "C:\\Users\\yahia\\source\\repos\\Guide-me\\Graph.cpp",
+              "RelativeToolTip": "Graph.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-04-20T17:42:35.796Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
