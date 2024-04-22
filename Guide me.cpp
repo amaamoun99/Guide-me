@@ -37,8 +37,8 @@ int main() {
     e2.addTransportation();
     Graph g;
 
-    g.addEdges("Cairo", "Giza", e1);
-    g.addEdges("Cairo", "BeniSuef", e2);
+    g.addEdges("alex", "france", e1);
+    g.addEdges("sharm", "usa", e2);
     f.WriteTransportationData(g.adjacency_list, filename);
     return 0;
 }

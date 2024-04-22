@@ -30,7 +30,7 @@ Files::Files() {};
     
 unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(string &filename)
 {
-    ifstream graphfile(filename);
+    ifstream graphfile(filename );
     if (!graphfile.is_open())
     {
         cout << "error, opening file" << endl;
@@ -63,7 +63,7 @@ unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(st
 }
 void Files::WriteTransportationData(unordered_map< string, list<pair<string, Edge>>> adjacentlist, string& filename)
 {
-    ofstream outputFile(filename);
+    ofstream outputFile(filename, ios::app);
     if (!outputFile.is_open())
     {
         cout << "Error opening file" << endl;
