@@ -1,2 +1,3 @@
 D:\university projects\Guide me\x64\Debug\Guide me.exe
 C:\Users\farida\source\repos\amaamoun99\Guide-me\x64\Debug\Guide me.exe
+C:\pp\Guide-me\x64\Debug\Guide me.exe
