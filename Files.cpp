@@ -4,7 +4,7 @@
 #include <string>
 #include<sstream>
 #include<unordered_map>
-#include "Edge.h"
+#include "Transporatations.h"
 #include"Graph.h"
 #include"User.h"
 #include<list>
@@ -28,7 +28,7 @@ Files::Files() {};
 //}
 
     
-unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(string &filename)
+unordered_map<string, list<pair<string, Transporatations>>>Files:: readTransportationData(string &filename)
 {
     ifstream graphfile(filename );
     if (!graphfile.is_open())
@@ -38,7 +38,7 @@ unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(st
     }
     int numOfRoutes;
     graphfile >> numOfRoutes;
-    unordered_map < string, list<pair<string, Edge >>> routes;
+    unordered_map < string, list<pair<string, Transporatations >>> routes;
     string line;
     getline(graphfile, line);
 
@@ -49,7 +49,7 @@ unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(st
         readline >> source >> destination;
         string vehicleName;
         float price;
-        Edge e;
+        Transporatations e;
         while (readline >> vehicleName >> price)
         {
             e.transportations.push_back({ vehicleName, price });
@@ -61,9 +61,9 @@ unordered_map<string, list<pair<string, Edge>>>Files:: readTransportationData(st
 
 
 }
-void Files::WriteTransportationData(unordered_map< string, list<pair<string, Edge>>> adjacentlist, string& filename)
+void Files::WriteTransportationData(unordered_map< string, list<pair<string, Transporatations>>> adjacentlist, string& filename)
 {
-    ofstream outputFile(filename, ios::app);
+    ofstream outputFile(filename, ios::out | ios::trunc);
     if (!outputFile.is_open())
     {
         cout << "Error opening file" << endl;
@@ -77,7 +77,7 @@ void Files::WriteTransportationData(unordered_map< string, list<pair<string, Edg
     for (const auto& entry : adjacentlist)
     {
         const string& source = entry.first;
-        const list<pair<string, Edge>>& destinations = entry.second;
+        const list<pair<string, Transporatations>>& destinations = entry.second;
 
         // Write source node
         outputFile << source << " ";
@@ -86,7 +86,7 @@ void Files::WriteTransportationData(unordered_map< string, list<pair<string, Edg
         for (const auto& destination : destinations)
         {
             const string& dest = destination.first;
-            const Edge& edge = destination.second;
+            const Transporatations& edge = destination.second;
 
             // Write destination node
             outputFile << dest << " ";

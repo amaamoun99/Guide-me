@@ -4,14 +4,14 @@
 #include <string>
 #include<vector>
 #include<unordered_map>
-#include"Edge.h"
+#include"Transporatations.h"
 using namespace std;
 class Files
 {
 	//ifstream inputFile("graph.txt");
 public:
 	Files();
-	unordered_map< string, list<pair<string, Edge>>> readTransportationData(string &filename);
-	 void WriteTransportationData(unordered_map< string, list<pair<string, Edge>>> adjacentlist, string& filename);
+	unordered_map< string, list<pair<string, Transporatations>>> readTransportationData(string &filename);
+	 void WriteTransportationData(unordered_map< string, list<pair<string, Transporatations>>> adjacentlist, string& filename);
 };
 
