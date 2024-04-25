@@ -1,8 +1,9 @@
-7
+8
 Cairo - Giza Metro 30 Bus 60 Uber 230 
 Cairo - BeniSuef Microbus 20 Bus 15 
 Dahab - Giza Bus 500 Microbus 345 
 Dahab - BeniSuef Microbus 200 Bus 315 
 Asyut - Cairo Train 250 Bus 450 
+ -  
 Sharm - Paris 
 Paris - Sharm 

@@ -3,21 +3,20 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include<vector>
 
-    using namespace std;
+using namespace std;
 
-    class User {
-    public:
-        string fname;
-        string lname;
-        string email;
-        string password;
-        string phoneNumber;
-        int age;
+class User {
+public:
 
-    public:
-        User(); // Constructor
-        void signUp(); // Sign up a new user
-        bool login(); // Log in an existing user
-    };
+    string username;
+    string password;
+    vector<User>users;
+public:
+    User();// 
+    User(const string& username, const string& password);
+    void signUp(vector<User>& users);
+    void login(vector<User>& users);
+};
 

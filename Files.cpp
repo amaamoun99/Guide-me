@@ -78,3 +78,35 @@ void Files::WriteTransportationData(unordered_map< string, list<pair<string, Tra
     }
     outfile.close();
 }
+vector<User> Files::readUserData(string file) {
+    vector <User> users;
+    ifstream userfile(file);
+    if (!userfile) {
+        cout << "Error opening File\n";
+    }
+    string lineOfUser;
+    while (getline(userfile, lineOfUser)) {
+        stringstream ss(lineOfUser);
+        string username, password;
+        getline(ss, username, ',');
+        getline(ss, password, ',');
+        users.push_back(User(username, password));
+
+    }
+    userfile.close();
+    return users;
+}
+
+void Files::writeUserData(string& file, vector<User>& users) {
+    ofstream outfile(file, ios::out | ios::trunc);
+    if (!outfile.is_open()) {
+        cout << "Error opening file " << file << " for writing" << endl;
+    }
+
+    for (const auto& user : users)
+    {
+        outfile << user.username << "," << user.password << endl;
+    }
+
+    outfile.close();
+}
