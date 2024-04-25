@@ -17,14 +17,14 @@ void main() {
     g.addEdge("Sharm", "Paris", e);
     g.displayAdjacentlist();
     string filename = "Graphdata.txt";
-    f.WriteTransportationData(g.adjacency_list,filename);
+    f.WriteTransportationData(g.adjacency_list, filename);
     Files f2;
     vector<User> users = f2.readUserData("person.txt");
     User u;
     // u.signUp(users);
-    u.login(users);
+    u.UserMenu(users);
 
     string file = "person.txt";
     f2.writeUserData(file, users);
-    
+
 }

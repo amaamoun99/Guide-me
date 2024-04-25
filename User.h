@@ -18,5 +18,6 @@ public:
     User(const string& username, const string& password);
     void signUp(vector<User>& users);
     void login(vector<User>& users);
+    void UserMenu(vector<User>& users);
 };
 

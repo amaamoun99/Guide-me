@@ -14,7 +14,7 @@ Graph::Graph() {
 }
 
 void Graph::addEdge(string source, string destination, Transporatations& e) {
-   
+
     adjacency_list[source].push_back({ destination, std::cref(e) });
     adjacency_list[destination].push_back({ source, std::cref(e) }); // For undirected graph
 }
@@ -22,7 +22,7 @@ void Graph::addEdge(string source, string destination, Transporatations& e) {
 void Graph::updateEdge(string source, string destination) {
     auto key = adjacency_list.find(source);
     auto key2 = adjacency_list.find(destination);
-    if (key != adjacency_list.end()) 
+    if (key != adjacency_list.end())
     {
         if (key2 != adjacency_list.end())
         {
@@ -38,24 +38,24 @@ void Graph::updateEdge(string source, string destination) {
 
                     }
                 }
-                
+
             }
         }
     }
 }
 
-void Graph::removeEdge(string source, string destination) 
+void Graph::removeEdge(string source, string destination)
 {
     auto key = adjacency_list.find(source);
-    if (key != adjacency_list.end()) 
+    if (key != adjacency_list.end())
     {
-        for (auto it = key->second.begin(); it != key->second.end();) 
+        for (auto it = key->second.begin(); it != key->second.end();)
         {
-            if (it->first == destination) 
+            if (it->first == destination)
             {
                 it = key->second.erase(it); // Update iterator after erasing
             }
-            else 
+            else
             {
                 ++it; // Move to the next iterator if no deletion occurs
             }
@@ -63,16 +63,16 @@ void Graph::removeEdge(string source, string destination)
     }
 
     auto key2 = adjacency_list.find(destination);
-    if (key2 != adjacency_list.end()) 
+    if (key2 != adjacency_list.end())
     {
-        for (auto it = key2->second.begin(); it != key2->second.end();) 
+        for (auto it = key2->second.begin(); it != key2->second.end();)
         {
-            if (it->first == source) 
+            if (it->first == source)
             {
                 it = key2->second.erase(it);
                 break;// Update iterator after erasing
             }
-            else 
+            else
             {
                 ++it; // Move to the next iterator if no deletion occurs
             }
@@ -98,4 +98,3 @@ void Graph::displayAdjacentlist()
         }
     }
 }
-

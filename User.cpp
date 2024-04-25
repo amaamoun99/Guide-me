@@ -18,6 +18,7 @@ void User::signUp(vector<User>& users) {
     cout << "Enter password for signup: ";
     cin >> u.password;
     users.push_back(u);
+    //we will put the menu of the program and call it as a function
 }
 
 void User::login(vector<User>& users) {
@@ -45,5 +46,22 @@ void User::login(vector<User>& users) {
     if (!flag) {
         cout << "You have exceeded the number of attempts. Please sign up.\n\n";
         signUp(users);
+    }
+    // we will put the menu of the program and call it as a function
+}
+void User::UserMenu(vector<User>& users) {
+    int ans;
+    User u;
+    cout << "1- Login \n" << "2- Sign up to create new account \n";
+    cin >> ans;
+    switch (ans)
+    {
+    case 1:
+        u.login(users);
+        break;
+
+    case 2:
+        u.signUp(users);
+        break;
     }
 }
