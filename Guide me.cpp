@@ -13,8 +13,8 @@ void main() {
     Files f;
     Graph g;
     Transporatations e;
-    g.addEdge("sharm", "paris", e);
-    /*g.removeEdge("sharm", "paris", e);*/
+    g.addEdge("Sharm", "Paris", e);
+    g.displayAdjacentlist();
     string filename = "Graphdata.txt";
     f.WriteTransportationData(g.adjacency_list,filename);
     

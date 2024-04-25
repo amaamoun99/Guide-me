@@ -16,7 +16,8 @@ public:
 
 public:
     Graph();
-    void addEdge(string, string, Transporatations);
+    void addEdge(string, string, Transporatations&);
     void updateEdge(string source, string destination);
-    void removeEdge(string source, string destination, Transporatations e);
+    void removeEdge(string source, string destination);
+    void displayAdjacentlist();
 };

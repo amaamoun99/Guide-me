@@ -9,7 +9,7 @@ void Transporatations::Menu()
 {
 	int choice;
 	cout << "What procedure you want to do?\n";
-	cout << "1-Update Transportation\n 2-Add Transportation\n 3-Remove Transportation";
+	cout << "1-Update Transportation\n 2-Add Transportation\n 3-Remove Transportation\n Your Choice:";
 	cin >> choice;
 
 	switch (choice)
@@ -28,16 +28,39 @@ void Transporatations::Menu()
 	}
 }
 
-
-
 void Transporatations::addTransportation()
 {
+	bool flag = false;
 	transportation newTransportation;
+	string nameCheck;
 	cout << "Enter the name of the new transportation you want to add \n";
-	cin >> newTransportation.Vechilename;
-	cout << "Enter the price of the new transportation you want to add \n";
-	cin >> newTransportation.VechilePrice;
-	transportations.push_back(newTransportation);
+	cin >> nameCheck;
+	if (transportations.empty()) {
+		newTransportation.Vechilename = nameCheck;
+		cout << "Enter the price of the new transportation you want to add \n";
+		cin >> newTransportation.VechilePrice;
+		transportations.push_back(newTransportation);
+
+
+	}
+	else {
+		newTransportation.Vechilename = nameCheck;
+		for (int i = 0; i < transportations.size(); i++)
+		{
+			if (transportations[i].Vechilename == nameCheck)
+			{
+				cout << "This already exist!\nEnter a new one";
+				addTransportation();
+				flag = true;
+			}
+		}
+		if (!flag) {
+			newTransportation.Vechilename = nameCheck;
+			cout << "Enter the price of the new transportation you want to add \n";
+			cin >> newTransportation.VechilePrice;
+			transportations.push_back(newTransportation);
+		}
+	}
 }
 
 void Transporatations::removeTransportation()
