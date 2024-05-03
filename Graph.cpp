@@ -4,6 +4,9 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include<stack>
+#include<queue>
+#include<unordered_set>
 
 using namespace std;
 
@@ -14,9 +17,14 @@ Graph::Graph() {
 }
 
 void Graph::addEdge(string source, string destination, Transporatations& e) {
-
-    adjacency_list[source].push_back({ destination, std::cref(e) });
-    adjacency_list[destination].push_back({ source, std::cref(e) }); // For undirected graph
+    for (const auto& dest : adjacency_list[source]) {
+        if (dest.first == destination) {
+            cout << "This edge already exists!\n";
+            return;
+        }
+    }
+    adjacency_list[source].push_back({ destination, e });
+    adjacency_list[destination].push_back({ source, e });
 }
 
 void Graph::updateEdge(string source, string destination) {
@@ -97,4 +105,87 @@ void Graph::displayAdjacentlist()
             }
         }
     }
+}
+void Graph::bfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string& source) {
+    // Create a queue for BFS
+    queue<string> bfs_queue;
+
+    // Create a set to keep track of visited vertices
+    unordered_set<string> visited;
+
+    // Mark the source vertex as visited and enqueue it
+    visited.insert(source);
+    bfs_queue.push(source);
+
+    cout << "BFS starting from vertex " << source << " : ";
+
+    // Iterate until the queue is empty
+    while (!bfs_queue.empty()) {
+        // Dequeue a vertex from the queue and print it
+        string current_vertex = bfs_queue.front();
+        cout << current_vertex << " ";
+        bfs_queue.pop();
+
+        // Traverse all adjacent vertices of the current vertex
+        for (const auto& neighbor : adjacency_list[current_vertex]) {
+            string destination = neighbor.first;
+
+            // If the adjacent vertex has not been visited yet, mark it as visited and enqueue it
+            if (visited.find(destination) == visited.end()) {
+                visited.insert(destination);
+                bfs_queue.push(destination);
+            }
+        }
+    }
+
+    cout << endl;
+}
+void Graph::dfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string& source)
+{
+    stack<string> dfs_stack;
+    unordered_set<string> visited;
+    // Mark the source vertex as visited and enqueue it
+    visited.insert(source);
+    dfs_stack.push(source);
+
+    cout << "DFS starting from vertex " << source << " : ";
+
+    // Iterate until the queue is empty
+    while (!dfs_stack.empty()) {
+        // Dequeue a vertex from the queue and print it
+        string current_vertex = dfs_stack.top();
+        cout << current_vertex << " ";
+        dfs_stack.pop();
+
+        // Traverse all adjacent vertices of the current vertex
+        for (const auto& neighbor : adjacency_list[current_vertex]) {
+            string destination = neighbor.first;
+
+            // If the adjacent vertex has not been visited yet, mark it as visited and enqueue it
+            if (visited.find(destination) == visited.end()) {
+                visited.insert(destination);
+                dfs_stack.push(destination);
+            }
+        }
+    }
+    cout << endl;
+}
+
+bool Graph::CompleteGraph(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list)
+{
+    int vertexcnt = 0;
+    for (const auto& source_cnt : adjacency_list) {
+        vertexcnt++;
+    }
+    int totalEdges = 0;
+    for (const auto& route : adjacency_list) {
+        totalEdges += route.second.size(); // Increment the total edges by the number of destinations for each source
+    }
+    totalEdges = totalEdges / 2;
+
+    if (totalEdges == (vertexcnt * (vertexcnt - 1) / 2))
+        return true;
+    else
+        return false;
+
 }

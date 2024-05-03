@@ -14,17 +14,22 @@ void main() {
     Files f;
     Graph g;
     Transporatations e;
-    g.addEdge("Sharm", "Paris", e);
+    /*g.addEdge("Sinai", "Paris", e);
+    g.updateEdge("Sinai", "Paris");*/
     g.displayAdjacentlist();
     string filename = "Graphdata.txt";
     f.WriteTransportationData(g.adjacency_list, filename);
-    Files f2;
+  /*  Files f2;
     vector<User> users = f2.readUserData("person.txt");
     User u;
-    // u.signUp(users);
+    u.signUp(users);
     u.UserMenu(users);
 
     string file = "person.txt";
-    f2.writeUserData(file, users);
+    f2.writeUserData(file, users);*/
+    string x = "Cairo";
+    g.bfs(g.adjacency_list, x);
+    g.dfs(g.adjacency_list, x);
 
+    cout << g.CompleteGraph(g.adjacency_list);
 }

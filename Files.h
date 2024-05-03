@@ -13,7 +13,7 @@ class Files
 public:
 	Files();
 	unordered_map< string, list<pair<string, Transporatations>>> readTransportationData(string &filename);
-	 void WriteTransportationData(unordered_map< string, list<pair<string, Transporatations>>> adjacentlist, string& filename);
+	void WriteTransportationData(unordered_map<string, list<pair<string, Transporatations>>>& adjacentlist, string& filename);
 	 vector<User>readUserData(string file);
 	 void writeUserData(string& file, vector<User>& users);
 };

@@ -17,9 +17,20 @@ void User::signUp(vector<User>& users) {
     cin >> u.username;
     cout << "Enter password for signup: ";
     cin >> u.password;
+    bool flag = false;
+    for (auto it = users.begin(); it != users.end(); it++) {
+        if (username == it->username && password == it->password) {
+            cout << "Login successful\n";
+            flag = true;
+            break;
+        }
+    }
     users.push_back(u);
-    //we will put the menu of the program and call it as a function
 }
+    
+    
+    //we will put the menu of the program and call it as a function
+
 
 void User::login(vector<User>& users) {
     string input_username, input_password;
@@ -31,17 +42,18 @@ void User::login(vector<User>& users) {
         cout << "Enter password: ";
         cin >> input_password;
 
-        for (auto it = users.begin(); it != users.end(); it++) {
+        /*for (auto it = users.begin(); it != users.end(); it++) {
             if (input_username == it->username && input_password == it->password) {
-                cout << "Login successful\n";
+                cout << "can't sign up as it aready exists\n";
                 flag = true;
+                login(users);
                 break;
             }
         }
         if (!flag) {
             attempts--;
             cout << "Invalid email or password. " << attempts << " attempts left\n\n";
-        }
+        }*/
     }
     if (!flag) {
         cout << "You have exceeded the number of attempts. Please sign up.\n\n";

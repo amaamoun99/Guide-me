@@ -20,4 +20,7 @@ public:
     void updateEdge(string source, string destination);
     void removeEdge(string source, string destination);
     void displayAdjacentlist();
+    void bfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string& source);
+    void dfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string& source);
+    bool CompleteGraph(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list);
 };
