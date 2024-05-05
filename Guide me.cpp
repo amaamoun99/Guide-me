@@ -12,24 +12,21 @@ using namespace std;
 
 void main() {
     Files f;
+    Files f2;
     Graph g;
-    Transporatations e;
-    /*g.addEdge("Sinai", "Paris", e);
-    g.updateEdge("Sinai", "Paris");*/
-    g.displayAdjacentlist();
-    string filename = "Graphdata.txt";
-    f.WriteTransportationData(g.adjacency_list, filename);
-  /*  Files f2;
-    vector<User> users = f2.readUserData("person.txt");
     User u;
-    u.signUp(users);
-    u.UserMenu(users);
-
+    string filename = "Graphdata.txt";
     string file = "person.txt";
-    f2.writeUserData(file, users);*/
-    string x = "Cairo";
-    g.bfs(g.adjacency_list, x);
-    g.dfs(g.adjacency_list, x);
+    u.StartProgram();
 
-    cout << g.CompleteGraph(g.adjacency_list);
+    
+    
+   
+
+  
+    
+    
+   
+    f2.writeUserData(file, u.users);
+    f.WriteTransportationData(g.adjacency_list, filename);
 }

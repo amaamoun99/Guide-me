@@ -19,5 +19,6 @@ public:
     void signUp(vector<User>& users);
     void login(vector<User>& users);
     void UserMenu(vector<User>& users);
+    void StartProgram();
 };
 

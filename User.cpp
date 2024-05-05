@@ -4,11 +4,23 @@
 #include<fstream>
 #include<cctype>
 #include<vector>
+#include"Graph.h"
+#include"Files.h"
+#include"Transporatations.h"
+
 
 using namespace std;
 
-User::User() {}
-User::User(const string& username, const string& password) : username(username), password(password) {}
+User::User() {
+    Files f2;
+    string filename = "person.txt";
+    vector<User> users = f2.readUserData(filename);
+}
+
+void User::StartProgram()
+{
+    UserMenu(users);
+}
 
 
 void User::signUp(vector<User>& users) {
