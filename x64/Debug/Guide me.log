@@ -1,23 +1,22 @@
 ﻿  Graph.cpp
-C:\Users\hanao\source\repos\amaamoun99\Guide-me\Graph.cpp(112,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\hanao\source\repos\amaamoun99\Guide-me\Graph.cpp(285,40): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hanao\source\repos\amaamoun99\Guide-me\Graph.cpp(328,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\utility(190,16): warning C4244: 'initializing': conversion from 'int' to '_Ty1', possible loss of data
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Graph.cpp(112,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Graph.cpp(285,40): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Graph.cpp(328,83): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include\utility(172,16): warning C4244: 'initializing': conversion from 'int' to '_Ty1', possible loss of data
           with
           [
               _Ty1=float
           ]
-C:\Users\hanao\source\repos\amaamoun99\Guide-me\Graph.cpp(318): message : see reference to function template instantiation 'std::pair<float,std::string>::pair<int&,std::string&,0>(_Other1,_Other2) noexcept(false)' being compiled
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Graph.cpp(318,49): message : see reference to function template instantiation 'std::pair<float,std::string>::pair<int&,std::string&,0>(_Other1,_Other2) noexcept(false)' being compiled
           with
           [
               _Other1=int &,
               _Other2=std::string &
           ]
-C:\Users\hanao\source\repos\amaamoun99\Guide-me\Graph.cpp(318): message : see reference to function template instantiation 'std::pair<float,std::string>::pair<int&,std::string&,0>(_Other1,_Other2) noexcept(false)' being compiled
+C:\Users\farida\source\repos\amaamoun99\Guide-me\Graph.cpp(318,24): message : see reference to function template instantiation 'std::pair<float,std::string>::pair<int&,std::string&,0>(_Other1,_Other2) noexcept(false)' being compiled
           with
           [
               _Other1=int &,
               _Other2=std::string &
           ]
-Files.obj : error LNK2019: unresolved external symbol "public: __cdecl User::User(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0User@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z) referenced in function "public: class std::vector<class User,class std::allocator<class User> > __cdecl Files::readUserData(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?readUserData@Files@@QEAA?AV?$vector@VUser@@V?$allocator@VUser@@@std@@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z)
-C:\Users\hanao\Source\Repos\amaamoun99\Guide-me\x64\Debug\Guide me.exe : fatal error LNK1120: 1 unresolved externals
+  Guide me.vcxproj -> C:\Users\farida\source\repos\amaamoun99\Guide-me\x64\Debug\Guide me.exe

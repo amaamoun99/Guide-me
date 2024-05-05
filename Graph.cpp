@@ -44,7 +44,7 @@ void Graph::MainMenu(Graph &graph)
             case 2:
                 cout << "Enter the Source" << endl;
                 cin >> source;
-                graph.bfs(graph.adjacency_list, source);
+                graph.dfs(graph.adjacency_list, source);
                 break;
             case 3:
                 break;
@@ -60,9 +60,9 @@ void Graph::MainMenu(Graph &graph)
             switch (choice3)
             {
             case 1:
-                cout << "Enter the source you want to edit:" << endl;
+                cout << "Enter the source you want to add:" << endl;
                 cin >> source;
-                cout << "Enter the destination you want to edit:" << endl;
+                cout << "Enter the destination you want to add:" << endl;
                 cin >> destination;
                 graph.addEdge(source, destination, transport);
                 break;
@@ -74,9 +74,9 @@ void Graph::MainMenu(Graph &graph)
                 graph.updateEdge(source, destination);
                 break;
             case 3:
-                cout << "Enter the source you want to edit:" << endl;
+                cout << "Enter the source you want to remove:" << endl;
                 cin >> source;
-                cout << "Enter the destination you want to edit:" << endl;
+                cout << "Enter the destination you want to remove:" << endl;
                 cin >> destination;
                 graph.removeEdge(source, destination);
                 break;

@@ -12,18 +12,21 @@
 using namespace std;
 
 User::User() {
-    Files f2;
-    string filename = "person.txt";
-    vector<User> users = f2.readUserData(filename);
+    
+}
+User::User(const std::string& username, const std::string& password) : username(username), password(password) {
+    
 }
 
-void User::StartProgram()
+    
+
+void User::StartProgram(Graph& graph)
 {
-    UserMenu(users);
+    UserMenu(users,  graph);
 }
 
 
-void User::signUp(vector<User>& users) {
+void User::signUp(vector<User>& users, Graph& graph) {
     User u;
     cout << "Enter new username for signup: ";
     cin >> u.username;
@@ -38,13 +41,14 @@ void User::signUp(vector<User>& users) {
         }
     }
     users.push_back(u);
+    u.login(users, graph);
 }
     
     
     //we will put the menu of the program and call it as a function
 
 
-void User::login(vector<User>& users) {
+void User::login(vector<User>& users, Graph& graph) {
     string input_username, input_password;
     int attempts = 3;
     bool flag = false;
@@ -69,11 +73,12 @@ void User::login(vector<User>& users) {
     }
     if (!flag) {
         cout << "You have exceeded the number of attempts. Please sign up.\n\n";
-        signUp(users);
+        signUp(users,graph);
     }
     // we will put the menu of the program and call it as a function
+    graph.MainMenu(graph);
 }
-void User::UserMenu(vector<User>& users) {
+void User::UserMenu(vector<User>& users, Graph& graph) {
     int ans;
     User u;
     cout << "1- Login \n" << "2- Sign up to create new account \n";
@@ -81,11 +86,12 @@ void User::UserMenu(vector<User>& users) {
     switch (ans)
     {
     case 1:
-        u.login(users);
+        u.login(users,graph);
+        
         break;
 
     case 2:
-        u.signUp(users);
+        u.signUp(users,graph);
         break;
     }
 }

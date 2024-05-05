@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 #include<vector>
-
+#include "Graph.h"
 using namespace std;
 
 class User {
@@ -16,9 +16,9 @@ public:
 public:
     User();// 
     User(const string& username, const string& password);
-    void signUp(vector<User>& users);
-    void login(vector<User>& users);
-    void UserMenu(vector<User>& users);
-    void StartProgram();
+    void signUp(vector<User>& users, Graph& graph);
+    void login(vector<User>& users, Graph& graph);
+    void UserMenu(vector<User>& users, Graph& graph);
+    void StartProgram(Graph& graph);
 };
 

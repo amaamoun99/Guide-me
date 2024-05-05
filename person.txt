@@ -1,6 +1,0 @@
-nada,11
-farida,111
-manar,1234
-nada,11
-nada,11
-nada,11

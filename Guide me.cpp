@@ -17,8 +17,9 @@ void main() {
     User u;
     string filename = "Graphdata.txt";
     string file = "person.txt";
-    u.StartProgram();
-
+    vector<User>users = f2.readUserData(file);
+    //u.StartProgram(g);
+    g.MainMenu(g);
     
     
    
