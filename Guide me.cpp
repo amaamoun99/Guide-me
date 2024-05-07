@@ -18,16 +18,9 @@ void main() {
     string filename = "Graphdata.txt";
     string file = "person.txt";
     vector<User>users = f2.readUserData(file);
-    //u.StartProgram(g);
-    g.MainMenu(g);
-    
-    
    
+    u.StartProgram(g,users);
+    f2.writeUserData(file,users);
 
-  
-    
-    
-   
-    f2.writeUserData(file, u.users);
     f.WriteTransportationData(g.adjacency_list, filename);
 }

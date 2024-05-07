@@ -1,0 +1,5 @@
+nada,11
+hana,omar
+farida,ali
+la,la
+no,no

@@ -17,7 +17,7 @@ public:
 
 public:
     Graph();
-    void MainMenu(Graph &g);
+    void MainMenu(Graph& g);
     void addEdge(string, string, Transporatations&);
     void updateEdge(string source, string destination);
     void removeEdge(string source, string destination);
