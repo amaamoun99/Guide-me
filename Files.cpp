@@ -16,7 +16,7 @@ using namespace std;
 Files::Files() {};
 
 
-unordered_map<string, list<pair<string, Transporatations>>>Files::readTransportationData(string& filename)
+unordered_map<string, list<pair<string, Transporatations>>>Files::readTransportationData(string filename)
 {
     ifstream graphfile(filename);
     if (!graphfile.is_open())
@@ -54,7 +54,7 @@ unordered_map<string, list<pair<string, Transporatations>>>Files::readTransporta
 
 
 }
-void Files::WriteTransportationData(unordered_map<string, list<pair<string, Transporatations>>>& adjacentlist, string& filename)
+void Files::WriteTransportationData(unordered_map<string, list<pair<string, Transporatations>>>& adjacentlist, string filename)
 {
     ofstream outfile(filename);
     if (!outfile.is_open()) {
@@ -115,7 +115,7 @@ vector<User> Files::readUserData(string file) {
     return users;
 }
 
-void Files::writeUserData(string& file, vector<User>& users) {
+void Files::writeUserData(string file, vector<User>& users) {
     ofstream outfile(file, ios::out | ios::trunc);
     if (!outfile.is_open()) {
         cout << "Error opening file " << file << " for writing" << endl;

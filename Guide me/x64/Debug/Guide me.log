@@ -1,10 +1,3 @@
-﻿  Transporatations.cpp
-C:\Users\yahia\source\repos\Guide-me\Transporatations.cpp(83,8): warning C4101: 'transporartionPrice': unreferenced local variable
-  Files.cpp
-C:\Users\yahia\source\repos\Guide-me\Files.cpp(65,40): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
-  Graph.cpp
-  Guide me.cpp
-C:\Users\yahia\source\repos\Guide-me\Guide me.cpp(12,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  User.cpp
-  Generating Code...
-  Guide me.vcxproj -> C:\Users\yahia\source\repos\Guide-me\x64\Debug\Guide me.exe
+﻿  User.cpp
+C:\Users\yahia\source\repos\Guide-me\User.cpp(401,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Guide me.vcxproj -> C:\Users\yahia\Source\Repos\Guide-me\x64\Debug\Guide me.exe

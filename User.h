@@ -1,24 +1,27 @@
 #pragma once
-
 #include <iostream>
 #include <fstream>
 #include <string>
-#include<vector>
+#include <vector>
+#include "Files.h"
 #include "Graph.h"
-using namespace std;
 
-class User {
+class User : public Files{
 public:
-
     string username;
     string password;
-    //vector<User>users;
+    vector<User> users;
+    Graph g;
 public:
-    User();// 
+    User();
     User(const string& username, const string& password);
-    void signUp(vector<User>& users, Graph& graph);
-    void login(vector<User>& users, Graph& graph);
-    void UserMenu(vector<User>& users, Graph& graph);
-    void StartProgram(Graph& graph, vector<User>&users);
+    void load();
+    void StartProgram();
+    void UserMenu();
+    void login();
+    void signUp();
+    void adminMenu();
+    void userMenu();
+    void save();
 };
 

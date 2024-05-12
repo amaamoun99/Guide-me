@@ -15,114 +15,15 @@ Graph::Graph() {
     string filename = "Graphdata.txt";
     adjacency_list = f.readTransportationData(filename);
 }
-void Graph::MainMenu(Graph &graph)
-{   
-    int choice;  
-    string source;
-    string destination;
-    Transporatations transport;
-    bool flag = true;
-    while (flag)
-    {
-        cout << "1-Traverse the graph" << endl << "2-Edit Graph" << endl << "3-Check whether the graph is Complete or not" << endl;
-        cout << "4-AMNY FYH maps" << endl << "5-Exit the program" << endl;
-        cin >> choice;
-        switch (choice)
-        {
-        case 1:
-            int choice2;
-
-            cout << "1-BFS" << endl << "2-DFS" << endl << "3-Go back to Main Menu" << endl;
-            cin >> choice2;
-            switch (choice2) {
-
-            case 1:
-                cout << "Enter the Source" << endl;
-                cin >> source;
-                graph.bfs(graph.adjacency_list, source);
-                break;
-            case 2:
-                cout << "Enter the Source" << endl;
-                cin >> source;
-                graph.dfs(graph.adjacency_list, source);
-                break;
-            case 3:
-                break;
-            default:
-                cout << "Enter a valid Number!!" << endl;
-                break;
-            }
-            break;
-        case 2:
-            int choice3;
-            cout << "1-Add Edge" << endl << "2-Update Edge" << endl << "3-Remove Edge" << endl << "4-Go back to Main Menu" << endl;
-            cin >> choice3;
-            switch (choice3)
-            {
-            case 1:
-                cout << "Enter the source you want to add:" << endl;
-                cin >> source;
-                cout << "Enter the destination you want to add:" << endl;
-                cin >> destination;
-                graph.addEdge(source, destination, transport);
-                break;
-            case 2:
-                cout << "Enter the source you want to edit:" << endl;
-                cin >> source;
-                cout << "Enter the destination you want to edit:" << endl;
-                cin >> destination;
-                graph.updateEdge(source, destination);
-                break;
-            case 3:
-                cout << "Enter the source you want to remove:" << endl;
-                cin >> source;
-                cout << "Enter the destination you want to remove:" << endl;
-                cin >> destination;
-                graph.removeEdge(source, destination);
-                break;
-            case 4:
-                break;
-            default:
-                cout << "Enter a valid Number!!" << endl;
-                break;
-            }
-
-            break;
-        
-        case 3:
-        {  bool complete = graph.CompleteGraph(graph.adjacency_list);
-        if (complete == true)
-        {
-            cout << "Complete Graph" << endl;
-        }
-        else
-        {
-            cout << "Not Complete Graph" << endl;
-        }
-        break;
-        }
-        case 4:
-            float budget;
-            cout << "Enter the source you want to edit:" << endl;
-            cin >> source;
-            cout << "Enter the destination you want to edit:" << endl;
-            cin >> destination;
-            cout << "Enter the Max budget you want to pay:" << endl;
-            cin >> budget;
-            graph.findPaths(source, destination, budget, graph.adjacency_list);
-            break;
-        case 5:
-            flag = false;
-            break;
-        }
-    }
-}
 
 
 void Graph::addEdge(string source, string destination, Transporatations& e) {
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
     for (const auto& dest : adjacency_list[source]) {
         if (dest.first == destination) {
-            cout << "This edge already exists!\n";
+            cout << "\n\n";
+            cout<< string(padding, ' ') << "This edge already exists!\n";
             return;
         }
     }
@@ -191,90 +92,108 @@ void Graph::removeEdge(string source, string destination)
     }
 }
 
-void Graph::displayAdjacentlist()
+void Graph::displayAdjacentlistforfunctions()
 {
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
     for (const auto& entry : adjacency_list) {
         const string& source = entry.first;
         const list<pair<string, Transporatations>>& destinations = entry.second;
 
-        cout << "Source: " << source << endl;
+        cout << string(padding, ' ') << "Source: " << source << endl;
+        for (const auto& destination : destinations) {
+            const string& dest = destination.first;
+
+            cout << string(padding, ' ') << "\tDestination: " << dest << endl;
+        }
+    }
+}
+void Graph::displayAdjacentlist()
+{
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
+    cout << "\n\n\n\n\n\n\n\n\n\n";
+    cout << string(padding, ' ') << "\t\tDisplay Adjaceny List\n"
+        << string(padding, ' ') << "-------------------------------------\n";
+    for (const auto& entry : adjacency_list) {
+        const string& source = entry.first;
+        const list<pair<string, Transporatations>>& destinations = entry.second;
+
+        cout << string(padding, ' ') << "Source: " << source << endl;
         for (const auto& destination : destinations) {
             const string& dest = destination.first;
             const Transporatations& edge = destination.second;
 
-            cout << "\tDestination: " << dest << endl;
+            cout << string(padding, ' ') << "\tDestination: " << dest << endl;
             for (const auto& transportation : edge.transportations) {
-                cout << "\t\tVehicle: " << transportation.Vechilename << ", Price: " << transportation.VechilePrice << endl;
+                cout << string(padding, ' ') << "\t\tVehicle: " << transportation.Vechilename << ", Price: " << transportation.VechilePrice << endl;
             }
         }
     }
 }
-void Graph::bfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string source) {
-    // Create a queue for BFS
+void Graph::bfs(string source) {
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
     queue<string> bfs_queue;
-
-    // Create a set to keep track of visited vertices
     unordered_set<string> visited;
 
-    // Mark the source vertex as visited and enqueue it
     visited.insert(source);
     bfs_queue.push(source);
 
-    cout << "BFS starting from vertex " << source << " : ";
+    cout<< string(padding,' ') << "BFS starting from vertex " << source << " : ";
 
-    // Iterate until the queue is empty
     while (!bfs_queue.empty()) {
-        // Dequeue a vertex from the queue and print it
+
         string current_vertex = bfs_queue.front();
         cout << current_vertex << " ";
         bfs_queue.pop();
 
-        // Traverse all adjacent vertices of the current vertex
         for (const auto& neighbor : adjacency_list[current_vertex]) {
             string destination = neighbor.first;
 
-            // If the adjacent vertex has not been visited yet, mark it as visited and enqueue it
             if (visited.find(destination) == visited.end()) {
                 visited.insert(destination);
                 bfs_queue.push(destination);
             }
         }
     }
-
     cout << endl;
+    system("pause");
 }
-void Graph::dfs(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, string source)
+void Graph::dfs(string source)
 {
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
     stack<string> dfs_stack;
     unordered_set<string> visited;
-    // Mark the source vertex as visited and enqueue it
+  
     visited.insert(source);
     dfs_stack.push(source);
 
-    cout << "DFS starting from vertex " << source << " : ";
+    cout << string(padding, ' ') << "DFS starting from vertex " << source << " : ";
 
-    // Iterate until the queue is empty
     while (!dfs_stack.empty()) {
-        // Dequeue a vertex from the queue and print it
+
         string current_vertex = dfs_stack.top();
         cout << current_vertex << " ";
         dfs_stack.pop();
 
-        // Traverse all adjacent vertices of the current vertex
+
         for (const auto& neighbor : adjacency_list[current_vertex]) {
             string destination = neighbor.first;
 
-            // If the adjacent vertex has not been visited yet, mark it as visited and enqueue it
+
             if (visited.find(destination) == visited.end()) {
                 visited.insert(destination);
                 dfs_stack.push(destination);
             }
         }
     }
-    cout<< endl;
+    cout << endl;
+    system("pause");
 }
 
-bool Graph::CompleteGraph(unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list)
+bool Graph::CompleteGraph()
 {
     int vertexcnt = 0;
     for (const auto& source_cnt : adjacency_list) {
@@ -292,20 +211,26 @@ bool Graph::CompleteGraph(unordered_map<string, list<pair<string, Transporatatio
         return false;
 
 }
-void Graph::findPaths(string source, string destination, int budget, unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list) {
+void Graph::findPaths(string source, string destination, int budget) {
     unordered_set<string> visited;
     vector<string> path;
     vector<string> transportUsed;
     vector<pair<float, string>> paths;
-    findPathsHelper(source, destination, budget, 0, adjacency_list, visited, path, transportUsed, paths);
+    int consoleWidth = 120;
+    int padding = (consoleWidth - 25) / 2;
+    findPathsHelper(source, destination, budget, 0, visited, path, transportUsed, paths);
     sort(paths.begin(), paths.end());
-
+    cout << string(padding, ' ') << "Your Options:\n";
+    int i = 0;
     for (const auto& p : paths) {
-        cout << p.first << " " << p.second << endl;
+
+        cout<< string(padding,' ') << i+1 << "-" << p.second << " | Total Payment:" << p.first << endl;
+        i++;
     }
+    system("pause");
 
 }
-void Graph::findPathsHelper(string source, string destination, int budget, int currentCost, unordered_map<string, list<pair<string, Transporatations>>>& adjacency_list, unordered_set<string>& visited, vector<string>& path, vector<string>& transportUsed, vector<pair<float, string>>& paths) {
+void Graph::findPathsHelper(string source, string destination, int budget, int currentCost, unordered_set<string>& visited, vector<string>& path, vector<string>& transportUsed, vector<pair<float, string>>& paths) {
     path.push_back(source);
     if (source == destination) {
         string pathStr = "";
@@ -325,7 +250,7 @@ void Graph::findPathsHelper(string source, string destination, int budget, int c
             for (const auto& trans : transport.transportations) {
                 if (currentCost + trans.VechilePrice <= budget && visited.find(next_vertex) == visited.end()) {
                     transportUsed.push_back(trans.Vechilename);
-                    findPathsHelper(next_vertex, destination, budget, currentCost + trans.VechilePrice, adjacency_list, visited, path, transportUsed, paths);
+                    findPathsHelper(next_vertex, destination, budget, currentCost + trans.VechilePrice, visited, path, transportUsed, paths);
                     transportUsed.pop_back();
                 }
             }

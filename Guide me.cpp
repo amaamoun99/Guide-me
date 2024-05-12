@@ -11,16 +11,6 @@
 using namespace std;
 
 void main() {
-    Files f;
-    Files f2;
-    Graph g;
-    User u;
-    string filename = "Graphdata.txt";
-    string file = "person.txt";
-    vector<User>users = f2.readUserData(file);
-   
-    u.StartProgram(g,users);
-    f2.writeUserData(file,users);
-
-    f.WriteTransportationData(g.adjacency_list, filename);
+	User u;
+	u.StartProgram();
 }
