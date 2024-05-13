@@ -11,13 +11,14 @@
 using namespace std;
 
 Graph::Graph() {
-    Files f;
+   /* Files f;
     string filename = "Graphdata.txt";
-    adjacency_list = f.readTransportationData(filename);
+    adjacency_list = f.readTransportationData(filename);*/  
 }
 
 
-void Graph::addEdge(string source, string destination, Transporatations& e) {
+void Graph::addEdge(string source, string destination) {
+    Transporatations  e;
     int consoleWidth = 120;
     int padding = (consoleWidth - 25) / 2;
     for (const auto& dest : adjacency_list[source]) {
@@ -61,33 +62,29 @@ void Graph::removeEdge(string source, string destination)
     auto key = adjacency_list.find(source);
     if (key != adjacency_list.end())
     {
-        for (auto it = key->second.begin(); it != key->second.end();)
+        for (auto it = key->second.begin(); it != key->second.end();it++)
         {
             if (it->first == destination)
             {
-                it = key->second.erase(it); // Update iterator after erasing
+                it = key->second.erase(it);
+                break;// Update iterator after erasing
             }
-            else
-            {
-                ++it; // Move to the next iterator if no deletion occurs
-            }
+            
+             // Move to the next iterator if no deletion occurs
         }
     }
 
     auto key2 = adjacency_list.find(destination);
     if (key2 != adjacency_list.end())
     {
-        for (auto it = key2->second.begin(); it != key2->second.end();)
+        for (auto it = key2->second.begin(); it != key2->second.end(); ++it)
         {
             if (it->first == source)
             {
                 it = key2->second.erase(it);
                 break;// Update iterator after erasing
             }
-            else
-            {
-                ++it; // Move to the next iterator if no deletion occurs
-            }
+            
         }
     }
 }

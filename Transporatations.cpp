@@ -1,6 +1,7 @@
 #include "Transporatations.h"
 #include<string>
 #include<vector>
+#include<list>
 #include<iostream>
 using namespace std;
 
@@ -70,17 +71,15 @@ void Transporatations::addTransportation()
 		cout << string(padding, ' ') << "Enter the price of the new transportation: ";
 		cin >> newTransportation.VechilePrice;
 		transportations.push_back(newTransportation);
-
 		cout << "\n\n";
 		cout << string(padding, ' ') << "Added Successfully!\n";
 		system("pause");
 
-
 	}
 	else {
-		for (int i = 0; i < transportations.size(); i++)
+		for (auto it = transportations.begin(); it != transportations.end(); it++)
 		{
-			if (transportations[i].Vechilename == nameCheck)
+			if (it->Vechilename == nameCheck)
 			{
 				cout << string(padding, ' ') << "This already exist,Enter a new one!";
 				addTransportation();
@@ -101,25 +100,31 @@ void Transporatations::addTransportation()
 
 void Transporatations::removeTransportation()
 {
+	int i = 0;
 	int consoleWidth = 120;
 	int padding = (consoleWidth - 25) / 2;
 	cout << "\n\n\n\n\n\n\n\n\n\n";
 	cout << string(padding, ' ') << "\t\t Remove Transportation\n"
 		<< string(padding, ' ') << "-------------------------------------\n";
-	for (int i = 0; i < transportations.size(); i++)
+	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		cout << string(padding, ' ') << i + 1 << "-" << transportations[i].Vechilename;
+		cout << string(padding, ' ') << i + 1 << "-" <<it->Vechilename;
+		i++;
 	}
 	string transportationName;
 	cout << string(padding, ' ') << "-------------------------------------\n";
 	cout << string(padding, ' ') << "Enter the Vechile you want to remove: ";
 	cin >> transportationName;
-	for (int i = 0; i < transportations.size(); i++)
+	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		if (transportations[i].Vechilename == transportationName)
+		
+		if (it->Vechilename == transportationName)
 		{
-			transportations.erase(transportations.begin() + i);
+			transportations.erase(it);
+			break;
+			//transportations.erase(transportations.begin() + i);
 		}
+		
 	}
 	cout << "\n\n";
 	cout << string(padding, ' ') << "Deleted Successfully!\n";
@@ -137,15 +142,17 @@ void Transporatations::updateTransportation()
 		<< string(padding, ' ') << "-------------------------------------\n";
 	string transportationName;
 	float transporartionPrice;
-	for (int i = 0; i < transportations.size(); i++)
+	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		cout << string(padding, ' ') << i+1 << "-" << transportations[i].Vechilename << endl;
+		int i = 0;
+		cout << string(padding, ' ') << i+1 << "-" << it->Vechilename << endl;
+		i++;
 	}
 	cout << string(padding, ' ') << "Enter the Vehicle you want to update:";
 	cin >> transportationName;
-	for (int i = 0; i < transportations.size(); i++)
+	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		if (transportations[i].Vechilename == transportationName)
+		if (it->Vechilename == transportationName)
 		{
 			while (flag)
 			{
@@ -165,7 +172,7 @@ void Transporatations::updateTransportation()
 				case 1:
 					cout << string(padding, ' ') << "-------------------------------------\n";
 					cout << string(padding, ' ') << "Enter the new name";
-					cin >> transportations[i].Vechilename;
+					cin >> it->Vechilename;
 					cout << "\n\n";
 					cout << string(padding, ' ') << "Updated Successfully!\n";
 					system("pause");
@@ -173,7 +180,7 @@ void Transporatations::updateTransportation()
 				case 2:
 					cout << string(padding, ' ') << "-------------------------------------\n";
 					cout << string(padding, ' ') << "Enter the new price";
-					cin >> transportations[i].VechilePrice;
+					cin >> it->VechilePrice;
 					cout << "\n\n";
 					cout << string(padding, ' ') << "Updated Successfully!\n";
 					system("pause");

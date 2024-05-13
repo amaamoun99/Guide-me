@@ -14,7 +14,7 @@ using namespace std;
 User::User() {
 
 }
-User::User(const std::string& username, const std::string& password) : username(username), password(password) {
+User::User(const string& username, const string& password) : username(username), password(password) {
 
 }
 
@@ -220,7 +220,7 @@ void User::adminMenu()
                     cout << string(padding, ' ') << "Enter the destination you want to add:";
                     cin >> destination;
                     system("pause");
-                    g.addEdge(source, destination, transport);
+                    g.addEdge(source, destination);
                     cout << "\n\n";
                     cout << string(padding, ' ') << "Added Successfully!\n";
                     system("pause");
@@ -291,11 +291,12 @@ void User::adminMenu()
         }
         case 4:
             save();
+            break;
             return;
-            StartProgram();
         }
+        break;
     }
-
+    StartProgram();
 }
 
 void User::userMenu()
@@ -381,7 +382,7 @@ void User::userMenu()
         {
             system("cls");
             cout << "\n\n\n\n\n\n\n\n\n\n";
-            cout << string(padding, ' ') << "\t\tAMANY FY GRAPH\n"
+            cout << string(padding, ' ') << "\t\tAMNY FY GRAPH\n"
                 << string(padding, ' ') << "-------------------------------------\n";
             float budget;
             int i = 0;

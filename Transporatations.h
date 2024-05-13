@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include<vector>
+#include<list>
 using namespace std;
 
 
@@ -16,7 +17,7 @@ class Transporatations
 {
 public:
 
-	vector<transportation> transportations;
+	list<transportation> transportations;
 
 public:
 	void Menu();
