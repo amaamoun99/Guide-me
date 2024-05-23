@@ -1,3 +1,3 @@
 ﻿  User.cpp
-C:\Users\yahia\source\repos\Guide-me\User.cpp(401,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  Guide me.vcxproj -> C:\Users\yahia\Source\Repos\Guide-me\x64\Debug\Guide me.exe
+C:\Users\yahia\source\repos\Guide-me\User.cpp(403,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Guide me.vcxproj -> C:\Users\yahia\source\repos\Guide-me\x64\Debug\Guide me.exe

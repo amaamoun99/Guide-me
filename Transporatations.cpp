@@ -100,6 +100,7 @@ void Transporatations::addTransportation()
 
 void Transporatations::removeTransportation()
 {
+	system("cls");
 	int i = 0;
 	int consoleWidth = 120;
 	int padding = (consoleWidth - 25) / 2;
@@ -108,7 +109,7 @@ void Transporatations::removeTransportation()
 		<< string(padding, ' ') << "-------------------------------------\n";
 	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		cout << string(padding, ' ') << i + 1 << "-" <<it->Vechilename;
+		cout << string(padding, ' ') << i + 1 << "-" << it->Vechilename << endl;
 		i++;
 	}
 	string transportationName;
@@ -122,7 +123,7 @@ void Transporatations::removeTransportation()
 		{
 			transportations.erase(it);
 			break;
-			//transportations.erase(transportations.begin() + i);
+			
 		}
 		
 	}
@@ -142,10 +143,10 @@ void Transporatations::updateTransportation()
 		<< string(padding, ' ') << "-------------------------------------\n";
 	string transportationName;
 	float transporartionPrice;
+	int i = 0;
 	for (auto it = transportations.begin(); it != transportations.end(); it++)
 	{
-		int i = 0;
-		cout << string(padding, ' ') << i+1 << "-" << it->Vechilename << endl;
+		cout << string(padding, ' ') << i+1 << "-" << it->Vechilename << " | Price:" << it->VechilePrice << endl;
 		i++;
 	}
 	cout << string(padding, ' ') << "Enter the Vehicle you want to update:";
@@ -171,7 +172,7 @@ void Transporatations::updateTransportation()
 				{
 				case 1:
 					cout << string(padding, ' ') << "-------------------------------------\n";
-					cout << string(padding, ' ') << "Enter the new name";
+					cout << string(padding, ' ') << "Enter the new name:";
 					cin >> it->Vechilename;
 					cout << "\n\n";
 					cout << string(padding, ' ') << "Updated Successfully!\n";
@@ -179,7 +180,7 @@ void Transporatations::updateTransportation()
 					break;
 				case 2:
 					cout << string(padding, ' ') << "-------------------------------------\n";
-					cout << string(padding, ' ') << "Enter the new price";
+					cout << string(padding, ' ') << "Enter the new price:";
 					cin >> it->VechilePrice;
 					cout << "\n\n";
 					cout << string(padding, ' ') << "Updated Successfully!\n";

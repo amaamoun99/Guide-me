@@ -11,9 +11,7 @@
 using namespace std;
 
 Graph::Graph() {
-   /* Files f;
-    string filename = "Graphdata.txt";
-    adjacency_list = f.readTransportationData(filename);*/  
+  
 }
 
 
@@ -67,10 +65,10 @@ void Graph::removeEdge(string source, string destination)
             if (it->first == destination)
             {
                 it = key->second.erase(it);
-                break;// Update iterator after erasing
+                break;
             }
             
-             // Move to the next iterator if no deletion occurs
+            
         }
     }
 
@@ -82,7 +80,7 @@ void Graph::removeEdge(string source, string destination)
             if (it->first == source)
             {
                 it = key2->second.erase(it);
-                break;// Update iterator after erasing
+                break;
             }
             
         }
@@ -198,7 +196,7 @@ bool Graph::CompleteGraph()
     }
     int totalEdges = 0;
     for (const auto& route : adjacency_list) {
-        totalEdges += route.second.size(); // Increment the total edges by the number of destinations for each source
+        totalEdges += route.second.size(); 
     }
     totalEdges = totalEdges / 2;
 

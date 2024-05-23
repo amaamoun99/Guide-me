@@ -97,6 +97,7 @@ void User::login() {
 
                 if (input_username == "admin" && input_password == "admin")
                 {
+                    
                     adminMenu();
                 }
                 flag = true;
@@ -133,7 +134,7 @@ void User::signUp() {
     cout << string(padding, ' ') << "Enter new username for signup: ";
     cin >> u.username;
 
-    // Check if the username already exists
+    
     bool usernameExists = false;
     for (const auto& user : users) {
         if (u.username == user.username) {
@@ -142,12 +143,12 @@ void User::signUp() {
         }
     }
 
-    // If the username exists, prompt the user to choose a different one
+   
     if (usernameExists) {
         cout << "\n\n\n\n";
         cout << string(padding, ' ') << "Username already exists. Please choose a different one.\n";
         cout << string(padding, ' ') << system("pause");
-        signUp(); // Recursively call signUp to try again
+        signUp();
         return;
     }
 
@@ -316,7 +317,7 @@ void User::userMenu()
 
 
         cout << string(padding, ' ') << "1-Traverse the Graph\n"
-            << string(padding, ' ') << "2-AMNY FY GRAPH\n"
+            << string(padding, ' ') << "2-Find Route\n"
             << string(padding, ' ') << "3-Exit Program\n"
             << string(padding, ' ') << "Choice:";
         cin >> choice;

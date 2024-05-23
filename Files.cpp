@@ -1,6 +1,6 @@
 #include "Files.h"
 #include<iostream>
-#include <fstream> // For file stream operations
+#include <fstream> 
 #include <string>
 #include<sstream>
 #include<unordered_map>
@@ -33,7 +33,7 @@ unordered_map<string, list<pair<string, Transporatations>>>Files::readTransporta
 
     while (getline(graphfile, line))
     {
-        istringstream readline(line);//reads one line from the file
+        istringstream readline(line);
         string source, destination;
         readline >> source;
         readline.ignore();
@@ -64,30 +64,30 @@ void Files::WriteTransportationData(unordered_map<string, list<pair<string, Tran
 
     int totalEdges = 0;
     for (const auto& route : adjacentlist) {
-        totalEdges += route.second.size();// Increment the total edges by the number of destinations for each source
+        totalEdges += route.second.size();
     }
 
     totalEdges /= 2;
 
-    outfile << totalEdges << endl; // Write the total number of edges
+    outfile << totalEdges << endl; 
 
-    unordered_set<string> writtenEdges; // Keep track of written edges
+    unordered_set<string> writtenEdges; 
 
     for (const auto& route1 : adjacentlist) {
         for (const auto& dest1 : route1.second) {
-            // Construct the edge key using source and destination
+      
             string edgeKey = route1.first + " - " + dest1.first;
-            // Check if the reversed edge exists in the written edges set
+            
             string reversedEdgeKey = dest1.first + " - " + route1.first;
             if (writtenEdges.find(reversedEdgeKey) == writtenEdges.end()) {
-                // Check if the edge has already been written
+             
                 if (writtenEdges.find(edgeKey) == writtenEdges.end()) {
                     outfile << route1.first << " - " << dest1.first << " ";
                     for (const auto& trans : dest1.second.transportations) {
                         outfile << trans.Vechilename << " " << trans.VechilePrice << " ";
                     }
                     outfile << endl;
-                    // Mark the edge as written
+                    
                     writtenEdges.insert(edgeKey);
                 }
             }
